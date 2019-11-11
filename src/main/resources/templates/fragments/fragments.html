@@ -10,27 +10,40 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
-    <body th:fragment="top">
-        <div style="margin-top: 10px;" class="row justify-content-md-center">
-            <div class="col-2"></div>
-            <div class="col-md-auto">
-                <h1>Do You Know a Racist?</h1>
+    <body>
+        <div th:fragment="top">
+            <div style="margin-top: 10px;" class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    <h1>Do You Know a Racist?</h1>
+                </div>
+                <div class="col-2"></div>
             </div>
-            <div class="col-2"></div>
+            <div class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    Private data for Iron March, a notorious website for violent white supremacists, was recently published online.<br/>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    (as reported by <a target="_blank" href="https://arstechnica.com/information-technology/2019/11/massive-data-dump-exposes-members-of-website-for-violent-white-supremacists/">ars technica</a>)
+                </div>
+                <div class="col-2"></div>
+            </div>
         </div>
-        <div class="row justify-content-md-center">
-            <div class="col-2"></div>
-            <div class="col-md-auto">
-                Private data for Iron March, a notorious website for violent white supremacists, was recently published online.<br/>
+        <div th:fragment="bottom">
+            <div class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    <hr/>
+                    This is a <a href="https://spring.io/projects/spring-boot" target="_blank">Spring Boot</a> app. The source code can be found on GitHub <a href="https://github.com/dogeared/doyouknowaracist" target="_blank">here</a><br/>
+                    &copy; Copyright 2019 <a href="https://afitnerd.com" target="_blank">AFitNerd</a>
+                </div>
+                <div class="col-2"></div>
             </div>
-            <div class="col-2"></div>
-        </div>
-        <div class="row justify-content-md-center">
-            <div class="col-2"></div>
-            <div class="col-md-auto">
-                (as reported by <a target="_blank" href="https://arstechnica.com/information-technology/2019/11/massive-data-dump-exposes-members-of-website-for-violent-white-supremacists/">ars technica</a>)
-            </div>
-            <div class="col-2"></div>
         </div>
     </body>
 </html>
