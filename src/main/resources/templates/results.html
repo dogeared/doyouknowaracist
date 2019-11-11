@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div style="margin-top: 10px;" class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    <h3>Do You Know a Racist?</h3>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    Private data for Iron March, a notorious website for violent white supremacists, was recently published online.<br/>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    (as reported by <a target="_blank" href="https://arstechnica.com/information-technology/2019/11/massive-data-dump-exposes-members-of-website-for-violent-white-supremacists/">ars technica</a>)
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    <h2 th:inline="text">Is <strong>[[${email}]]</strong> a racist? <span class="btn" th:classappend="${racist.name() == 'PROBABLY'} ? btn-danger : btn-primary">[[${racist}]]</span></h2>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    <h6 th:inline="text" th:if="${racist.name() == 'PROBABLY'}">(found in Iron March data dump)</h6>
+                    <h6 th:inline="text" th:if="${racist.name() == 'UNKNOWN'}">(NOT found in the Iron March data dump)</h6>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-2"></div>
+                <div class="col-md-auto">
+                    <a th:href="@{/}">Find out if someone else is a racist</a>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </body>
+</html>

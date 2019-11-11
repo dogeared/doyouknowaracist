@@ -1,0 +1,1 @@
+web: java -jar target/okta-heroku-addon-0.0.1-SNAPSHOT.jar
