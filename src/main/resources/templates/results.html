@@ -2,38 +2,18 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
+        <!--/*/ <th:block th:include="fragments/fragments :: head"/> /*/-->
     </head>
 
-    <body>
+    <body th:with="isRacist=${racist.name() == 'PROBABLY'}">
         <div class="container-fluid">
-            <div style="margin-top: 10px;" class="row justify-content-md-center">
-                <div class="col-2"></div>
-                <div class="col-md-auto">
-                    <h1>Do You Know a Racist?</h1>
-                </div>
-                <div class="col-2"></div>
-            </div>
-            <div class="row justify-content-md-center">
-                <div class="col-2"></div>
-                <div class="col-md-auto">
-                    Private data for Iron March, a notorious website for violent white supremacists, was recently published online.<br/>
-                </div>
-                <div class="col-2"></div>
-            </div>
-            <div class="row justify-content-md-center">
-                <div class="col-2"></div>
-                <div class="col-md-auto">
-                    (as reported by <a target="_blank" href="https://arstechnica.com/information-technology/2019/11/massive-data-dump-exposes-members-of-website-for-violent-white-supremacists/">ars technica</a>)
-                </div>
-                <div class="col-2"></div>
-            </div>
+            <!--/*/ <th:block th:include="fragments/fragments :: top"/> /*/-->
             <div class="row justify-content-md-center">
                 <div class="col-2"></div>
                 <div class="col-md-auto">
                     <div>
                         <h2 th:inline="text" style="margin-bottom: 0px;">
-                            Is <strong>[[${email}]]</strong> a racist? <span class="btn btn-sm" th:classappend="${racist.name() == 'PROBABLY'} ? btn-danger : btn-primary">[[${racist}]]</span>
+                            Is <strong>[[${email}]]</strong> a racist? <span class="btn btn-sm" th:classappend="${isRacist} ? btn-danger : btn-primary">[[${racist}]]</span>
                         </h2>
                     </div>
                 </div>
@@ -42,8 +22,7 @@
             <div class="row justify-content-md-center">
                 <div class="col-2"></div>
                 <div class="col-md-auto">
-                    <h6 th:inline="text" th:if="${racist.name() == 'PROBABLY'}">(found in Iron March data dump)</h6>
-                    <h6 th:inline="text" th:if="${racist.name() == 'UNKNOWN'}">(NOT found in the Iron March data dump)</h6>
+                    <h6 th:inline="text">(<span th:unless="${isRacist}">NOT </span>found in Iron March data dump)</h6>
                 </div>
                 <div class="col-2"></div>
             </div>
