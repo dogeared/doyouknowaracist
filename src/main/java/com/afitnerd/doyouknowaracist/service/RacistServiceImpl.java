@@ -21,7 +21,7 @@ import java.util.zip.GZIPInputStream;
 @Service
 public class RacistServiceImpl implements RacistService {
 
-
+    // expectation is a newline separated list of emails, gzipped and base64 encoded
     @Value("#{ @environment['racists'] }")
     private String racistsB64;
 
@@ -38,10 +38,12 @@ public class RacistServiceImpl implements RacistService {
     private String[] parseRacists() throws IOException  {
         byte[] decodedBytes = Base64.getMimeDecoder().decode(racistsB64);
         GZIPInputStream gzippedData = new GZIPInputStream(new ByteArrayInputStream(decodedBytes));
-        byte[] buffer = new byte[1024];
-        int len;
         StringBuilder delimitedRacists = new StringBuilder();
-        try (Reader reader = new BufferedReader(new InputStreamReader(gzippedData, Charset.forName(StandardCharsets.UTF_8.name())))) {
+        try (
+            Reader reader = new BufferedReader(
+                new InputStreamReader(gzippedData, Charset.forName(StandardCharsets.UTF_8.name()))
+            )
+        ) {
             int c;
             while ((c = reader.read()) != -1) {
                 delimitedRacists.append((char) c);
