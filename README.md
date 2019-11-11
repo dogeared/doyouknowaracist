@@ -17,5 +17,5 @@ There's also an RESTful API to get a json response:
 
 ex:
 ```
-GET https://doyouknowaracist.dev/api/v1/is_racist/notreal@example.com
+curl https://doyouknowaracist.dev/api/v1/is_racist/notreal@example.com
 ```
