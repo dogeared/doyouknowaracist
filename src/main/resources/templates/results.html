@@ -31,7 +31,11 @@
             <div class="row justify-content-md-center">
                 <div class="col-2"></div>
                 <div class="col-md-auto">
-                    <h2 th:inline="text">Is <strong>[[${email}]]</strong> a racist? <span class="btn" th:classappend="${racist.name() == 'PROBABLY'} ? btn-danger : btn-primary">[[${racist}]]</span></h2>
+                    <div>
+                        <h2 th:inline="text" style="margin-bottom: 0px;">
+                            Is <strong>[[${email}]]</strong> a racist? <span class="btn btn-sm" th:classappend="${racist.name() == 'PROBABLY'} ? btn-danger : btn-primary">[[${racist}]]</span>
+                        </h2>
+                    </div>
                 </div>
                 <div class="col-2"></div>
             </div>
