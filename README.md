@@ -15,7 +15,11 @@ There's only two possible outcomes:
 
 There's also an RESTful API to get a json response:
 
-ex:
+example:
 ```
 curl https://doyouknowaracist.dev/api/v1/is_racist/notreal@example.com
+{"racist":"PROBABLY"}
+
+curl https://doyouknowaracist.dev/api/v1/is_racist/micah@afitnerd.com
+{"racist":"UNKNOWN"}
 ```
